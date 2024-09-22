@@ -1,0 +1,224 @@
+body {
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+h1 {
+  color: #333;
+  font-weight: 700;
+  margin-top: 125px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 23px;
+}
+
+.process-wrapper {
+  display: block;
+  margin: auto;
+}
+
+#progress-bar-container {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  margin-top: 65px;
+  margin-bottom: 35px;
+}
+
+.progress-line {
+  position: relative;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.progress-line.centered ul {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#progress-bar-container ul {
+  padding: 0;
+  margin: 0;
+  padding-top: 15px;
+  z-index: 9999;
+  position: absolute;
+  width: 100%;
+  margin-top: -40px;
+}
+
+#progress-bar-container li {
+  list-style: none;
+  float: left;
+  width: 33.33%;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 11px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all ease 0.2s;
+  vertical-align: bottom;
+  height: 60px;
+  position: relative;
+}
+
+.progress-line.centered li {
+  width: 33.33%;
+  float: none;
+  display: inline-block;
+}
+
+#progress-bar-container li .step-inner {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  font-size: 14px;
+}
+
+#progress-bar-container li.active,
+#progress-bar-container li:hover {
+  color: white;
+}
+
+#progress-bar-container li:before {
+  content: attr(data-step);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: solid 2px #aaa;
+  transition: all ease 0.3s;
+  margin-top: -25px;
+  font-size: 18px;
+}
+
+#progress-bar-container li.active:before,
+#progress-bar-container li:hover:before {
+  border: solid 2px #fff;
+  background: linear-gradient(to right, #00a8bd 0%, #fff 100%);
+}
+
+#progress-bar-container li:after {
+  content: " ";
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: #777;
+  margin: auto;
+  border: solid 7px #fff;
+  border-radius: 50%;
+  margin-top: 48px;
+  box-shadow: 0 2px 13px -1px rgba(0, 0, 0, 0.3);
+  transition: all ease 0.2s;
+}
+
+#progress-bar-container li:hover:after {
+  background: #555;
+}
+
+#progress-bar-container li.active:after {
+  background: #207893;
+}
+
+#progress-bar-container #line {
+  width: 66.67%; /* Adjust if necessary */
+  margin: 0;
+  background: #eee;
+  height: 6px;
+  position: absolute;
+  left: 16.67%;
+  top: 57px;
+  z-index: 1;
+  border-radius: 50px;
+  transition: all ease 0.9s;
+}
+
+.progress-line.centered #line {
+  width: 33.33%;
+  left: 33.33%;
+}
+
+#progress-bar-container #line-progress {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: #207893;
+  background: linear-gradient(to right, #207893 0%, #2ea3b7 100%);
+  position: absolute;
+  z-index: 2;
+  border-radius: 50px;
+  transition: all ease 0.9s;
+}
+
+#progress-content-section {
+  width: 90%;
+  margin: auto;
+  background: linear-gradient(to left, #008bcf, #023f92, #008bcf);
+  color: white;
+  border-radius: 10px;
+  padding: 30px 60px;
+  padding-top: 0;
+  transition: transform 1s ease;
+  box-shadow: 30px 51px 98px 0 rgba(255, 255, 255, 0.2);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-size: 200%;
+  animation: backgroundMove 3s linear infinite;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#progress-content-section:hover {
+  background-position: right;
+  animation: 0s linear infinite;
+  transform: scale(1.1);
+}
+
+.section-content {
+  display: none;
+  text-align: center;
+}
+
+.section-content.active {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .process-wrapper {
+    display: block;
+    margin: auto;
+  }
+
+  #progress-bar-container {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    margin-top: 65px;
+    margin-bottom: 35px;
+  }
+
+  .progress-line {
+    position: relative;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+}
